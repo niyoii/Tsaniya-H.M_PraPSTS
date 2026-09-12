@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pra PSTS</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-blue-50/50 min-h-screen flex items-center justify-center p-4 antialiased text-slate-700">
+
+<form class="bg-white w-full max-w-xl rounded-2xl shadow-sm border border-blue-100 p-6 md:p-8 space-y-5">
+    <h1 class="text-xl font-bold text-blue-900 text-center md:text-left mb-6">Reservation form for the school's computer lab</h1>
+    
+    <!-- Masukin nama -->
+    <div>
+        <label class="block text-sm font-semibold text-slate-800 mb-1.5">Full Name</label>
+        <input type="text" name="name" placeholder="Enter Your Full Name" maxlength="50" required 
+               class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+    </div>
+
+    <!-- buat pilihan -->
+    <div>
+        <label class="block text-sm font-semibold text-slate-800 mb-1.5">Status</label>
+        <div class="relative">
+            <select class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm appearance-none focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+                <option>Teacher</option>
+                <option>Student</option>
+                <option>Organization</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                <svg class="fill-current h-4 w-4" xmlns="http://w3.org" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- memasukan tujuan meminjam -->
+    <div>
+        <label class="block text-sm font-semibold text-slate-800 mb-1.5">Purpose</label>
+        <input type="text" purpose="purpose" placeholder="Enter Your Full purpose" 
+               class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+    </div>
+
+    <!-- Pemilihan lab -->
+    <div>
+        <label class="block text-sm font-semibold text-slate-800 mb-2">Borrowed Lab</label>
+        <div class="flex items-center gap-6">
+            <label class="flex items-center text-sm font-medium text-slate-700 cursor-pointer">
+                <input type="radio" name="Borrowed lab" class="w-4 h-4 text-blue-500 border-slate-300 focus:ring-blue-400 focus:ring-2 mr-2"> 
+                Software Lab
+            </label>
+            <label class="flex items-center text-sm font-medium text-slate-700 cursor-pointer">
+                <input type="radio" name="Borrowed lab" class="w-4 h-4 text-blue-500 border-slate-300 focus:ring-blue-400 focus:ring-2 mr-2"> 
+                Hardware Lab
+            </label>
+        </div>
+    </div>
+
+    <!-- Tanggal & Jumlah Peserta (Dibuat Grid agar Sejajar Rapi) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-sm font-semibold text-slate-800 mb-1.5">Date of Use</label>
+            <input type="date" name="date" 
+                   class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+        </div>
+        <!-- Jumlah peserta -->
+        <div>
+            <label class="block text-sm font-semibold text-slate-800 mb-1.5">Number of Participants</label>
+            <input type="text" name="number" placeholder="eg. 16" maxlength="50" required 
+                   class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+        </div>
+    </div>
+
+    <!-- Waktu mulai & Selesai (Dibuat Grid Berdampingan) -->
+    <div class="grid grid-cols-2 gap-4">
+        <div>
+            <label class="block text-sm font-semibold text-slate-800 mb-1.5">Start Time</label>
+            <input type="time" name="time" 
+                   class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+        </div>
+        <div>
+            <label class="block text-sm font-semibold text-slate-800 mb-1.5">End Time</label>
+            <input type="time" name="time" 
+                   class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200">
+        </div>
+    </div>
+
+    <!-- Persyaratan Khusus -->
+    <div>
+        <label class="block text-sm font-semibold text-slate-800 mb-1.5">Special Requirements</label>
+        <textarea rows="4" placeholder="ex: Need internet access, need a..." required 
+                  class="w-full px-4 py-2.5 rounded-lg border border-slate-200 bg-slate-50/50 text-sm focus:outline-none focus:border-blue-400 focus:bg-white focus:ring-4 focus:ring-blue-100 transition-all duration-200 resize-y"></textarea>
+    </div>
+
+    <!-- Button submit -->
+    <div class="pt-2">
+        <button type="submit" 
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-xl shadow-md shadow-blue-200/50 hover:shadow-lg transition-all duration-200 text-sm tracking-wide cursor-pointer">
+            Submit
+        </button>
+    </div>
+</form>
+
+</body>
+</html>
